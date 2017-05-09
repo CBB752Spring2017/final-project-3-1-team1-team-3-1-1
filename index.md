@@ -25,22 +25,20 @@ Table of Contents
 -   Pipeline: Dingjue Ji  
 
 ____________
-____________
 
 ### 1. Introduction <a name = "introduction"></a>
 For the past decade, protein networks have provided valuable insights into molecular evolution and function. New methods of measuring protein interaction have provided the data for bringing network theory and analysis to this important area. Protein networks and their properties are critical for pharmacology, disease classification, and personalized medicine. As available information grows in coverage and quality, protein networks will play an increasing role in the clinical interpretation of genetic variation. In the context of this project, protein networks allow us to better understand the importance of the Carl's mutant coding genes and evaluate the deleteriousness of such variants. 
 
 ____________
-____________
 
 ### 2. Writing <a name = "writing"></a>
 
-____________
+------------
 
 #### 2.1 Instructions
 *Discuss the difference of degree centrality and betweenness centrality you observed. How are these centralities measurement helpful for us to understand different mutations and the protein-protein network.*
 
-____________
+------------
 
 #### 2.2 Network Theory
 
@@ -59,7 +57,7 @@ where $\sigma_{st}$ is the total number of shortest paths from node $s$ to node 
 
 **Hierarchical Network Analysis**: Hierarchical models treat a network as a nested series of sub-networks. In other words, the lowest level is the original network, and every level above it collapses clusters of the network into individual nodes. These models enable the study of properties between successively larger clusters of nodes. Hierarchical models are intended for scale-free networks, which are the norm in PPI networks. 
 
-____________
+------------
 
 #### 2.3 Databases
 
@@ -72,7 +70,7 @@ There exist many databases that document experimentally determined and theoretic
 
 The coding and pipeline portions of this project use the DIP and MINT databases. 
 
-____________
+------------
 
 #### 2.4 Observed Centrality Measures
 
@@ -81,21 +79,38 @@ We observed that proteins with SNPs are have smaller values for both measures of
 These centralities measurement allow us to quantitatively show the influence of an individual gene on the overall network. Genes that are connected to many nodes, or help to connect other nodes are of special interest. Thus, these measures are useful for understanding, identifying, and validating candidate mutations in the context of the whole the protein-protein network.
 
 ____________
-____________
 
 ### 3. Coding <a name = "coding"></a>
 
-____________
+------------
 
 #### 3.1 Instructions
 *Calculate the degree centrality and betweenness centrality of proteins containing and not containing SNPs in Carl’s genome using a PPI file.*
 
-____________
+------------
 
 #### 3.2 Documentation:
-We have computed the (1) degree centrality and (2) betweenness centrality of proteins in (A) proteins with Carl's SNPs and (B) proteins without Carl's SNPs. Data was collected from the DIP database including 4,679 proteins. Proteins containing SNPs were extracted from `Z.3DStruct_annotation.txt`.
+We have created a script for computing the (1) degree centrality and (2) betweenness centrality of proteins in (A) proteins with Carl's SNPs and (B) proteins without Carl's SNPs. Data was collected from the DIP database including 4,679 proteins. 
 
-____________
+##### 3.2.1 Usage
+`python3 centrality_calculation.py -i <input file> -a <annotation file> -n <dip ppi file>`
+
+##### 3.2.2 Example
+`python3 centrality_calculation.py -i input.txt -a map_table.txt -n dip.txt`
+
+##### 3.2.3 Input File
+`Z.3DStruct_annotation.txt`
+
+##### 3.2.4 Annotation File
+From uniprot id to gene name:
+
+**From &nbsp;&nbsp;&nbsp;&nbsp; To**  
+P62161 &nbsp; Calm1
+
+##### 3.2.5 DIP PPI file
+DIP PPI file can be downloaded online. We provide a DIP PPI file in the package.
+
+------------
 
 #### 3.3 Results:
 **Figure 1**: Network properties of proteins with and without Carl’s SNPs
@@ -105,16 +120,15 @@ ____________
 It is clear that proteins with SNPs are shifted left on both measures of centrality, meaning that they are both less likely to be connected to many other nodes, and less likely to help connect other nodes. 
 
 ____________
-____________
 
 ### 4. Pipeline <a name = "pipeline"></a>
 
-____________
+------------
 
 #### 4.1 Instructions 
 *Use Cytoscape or other softwares to visualize the protein-protein network. Check the centrality calculations with the software and demonstrate one or two examples. Perform hierarchical network analysis and determine if there is enriched or depleted mutation in each hierarchy.*
 
-____________
+------------
 
 #### 4.2 Documentation:
 We have chosen to use Cytoscape to visualize the protein-protein network. In each plot, the genes with Carl's SNPs are marked in red, and the genes without SNPs are marked in green. The node size is proportional to its degree. 
@@ -123,7 +137,7 @@ The gene name mapping is based on ENSEMBL transcript ID - uniprotKB ID pairs. Th
 
 Lastly, hierarchical network analysis was performed to look for enrichment or depletion of mutations in different hierarchies. Although the interactomes DIP and MINT do not have regulatory relationship recorded, it might still be useful to check the hierarchy in network structure like directed graphs. The goal is to separate the graph in a hierarchy. However, I did not find any available tools to use or algorithms to implement on undirected graphs for hierarchical analysis. Note that, HirNet by Cheng C et al. is designed for directed network, but here we use it to catch a glimpse of the network structure. It does not necessarily reflect any regulatory features for the network itself. Fisher's exact test was used to test for enrichment of SNPs in each hierarchical layer. 
 
-____________
+------------
 
 #### 4.3 Results:
 
@@ -180,12 +194,10 @@ The same Cytoscape visualizations are shown below, colored by the six separate h
 ![MINT_hierarchy](Pipeline/MINT_hierarchy.png) 
 
 ____________
-____________
 
 ### 5. Conclusions <a name = "conclusions"></a>
 A network analysis of Carl's personal genome reveals some properties of his genes with SNPs. By two separate metrics, these genes are quantitatively demonstrated to have lower influence on the overall protein network. The Cytoscape visualization further helps demonstrate this pattern. These network plots also reveal a few genes (the large, red nodes) that are more likely to be problematic based on their positioning (between other nodes) and degree (high). None of these findings can definitely demonstrate pathogenicity, but are valuable for identifying and validating candidate mutations to report. 
 
-____________
 ____________
 
 ### 6. References <a name = "references"></a>

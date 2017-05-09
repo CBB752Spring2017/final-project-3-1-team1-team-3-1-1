@@ -41,4 +41,4 @@ Mengting Gu
 
 Paul Muir
 
-All the professors in CBB752
+All the professors in CBB 752
