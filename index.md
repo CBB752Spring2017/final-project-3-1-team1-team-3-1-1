@@ -24,12 +24,12 @@ Table of Contents
 -   Coding: Zhaolong Yu  
 -   Pipeline: Dingjue Ji  
 
-____________
+-----------------------
 
 ### 1. Introduction <a name = "introduction"></a>
 For the past decade, protein networks have provided valuable insights into molecular evolution and function. New methods of measuring protein interaction have provided the data for bringing network theory and analysis to this important area. Protein networks and their properties are critical for pharmacology, disease classification, and personalized medicine. As available information grows in coverage and quality, protein networks will play an increasing role in the clinical interpretation of genetic variation. In the context of this project, protein networks allow us to better understand the importance of the Carl's mutant coding genes and evaluate the deleteriousness of such variants. 
 
-____________
+-----------------------
 
 ### 2. Writing <a name = "writing"></a>
 
@@ -165,10 +165,10 @@ Cytoscape was used to replicate the histograms for degree centrality and between
 The DIP and MINT network are cut into 6 layers. Fisher’s exact is used to test the enrichment of genes with SNP in Carl’s genome for different layers. The distribution of genes in the 6 layers is shown as below.
 
 **Figure 5**: Distribution of genes across layers in DIP
-![DIP_layers](Pipeline/DIP_layers.png)  
+![DIP_layers](Pipeline/DIP_Layers.png)  
 
 **Figure 6**: Distribution of genes across layers in MINT
-![MINT_layers](Pipeline/MINT_layers.png)  
+![MINT_layers](Pipeline/MINT_Layers.png)  
 
 ##### 4.3.4 Detection of Mutation Enrichment or Depletion in Each Hierarchy
 
