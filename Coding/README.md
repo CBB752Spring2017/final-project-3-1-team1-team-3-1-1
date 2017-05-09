@@ -14,6 +14,7 @@ Z.3DStruct_annotation.txt
 From uniprot id to gene name:
 
 From	To
+
 P62161	Calm1
 
 ## DIP PPI file
