@@ -54,9 +54,15 @@ $$ g(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}} $$
 
 where $\sigma_{st}$ is the total number of shortest paths from node $s$ to node $t$, and $\sigma_{st}(v)$ is the number of those paths that pass through $v$. 
 
+**Figure 1**: Example of High Centrality Measures
+
+![](Writing/diverse-centrality-measures.png)  
 
 **Hierarchical Network Analysis**: Hierarchical models treat a network as a nested series of sub-networks. In other words, the lowest level is the original network, and every level above it collapses clusters of the network into individual nodes. These models enable the study of properties between successively larger clusters of nodes. Hierarchical models are intended for scale-free networks, which are the norm in PPI networks. 
 
+**Figure 2**: Example of a Simple Hierarchical Network
+
+![](Writing/hierarchical_picture.png)  
 ------------
 
 #### 2.3 Databases
@@ -113,8 +119,8 @@ DIP PPI file can be downloaded online. We provide a DIP PPI file in the package.
 ------------
 
 #### 3.3 Results:
-**Figure 1**: Network properties of proteins with and without Carl’s SNPs
-![degree_centrality](Coding/degree_centrality.png)
+**Figure 3**: Network properties of proteins with and without Carl’s SNPs
+![](Coding/degree_centrality.png)
 ![betweenness_centrality](Coding/betweenness_centrality.png)
 
 It is clear that proteins with SNPs are shifted left on both measures of centrality, meaning that they are both less likely to be connected to many other nodes, and less likely to help connect other nodes. 
@@ -143,12 +149,12 @@ Lastly, hierarchical network analysis was performed to look for enrichment or de
 
 ##### 4.3.1 Visualizing the Protein-Protein Network
 
-**Figure 2**: Visualized Network from DIP
-![DIP_1](Pipeline/DIP_1.png)
+**Figure 4**: Visualized Network from DIP
+![](Pipeline/DIP_1.png)
 ![DIP_2](Pipeline/DIP_2.png)  
 
-**Figure 3**: Visualized Network from MINT
-![MINT_1](Pipeline/MINT_1.png)
+**Figure 5**: Visualized Network from MINT
+![](Pipeline/MINT_1.png)
 ![MINT_2](Pipeline/MINT_2.png)  
 
 Because of the large number of nodes, it is not immediately obvious whether the red genes (with SNPs) are enriched at the borders and in smaller nodes, as would be expected. However, by inspecting the details below each map, such a pattern may be deduced. 
@@ -157,22 +163,26 @@ Because of the large number of nodes, it is not immediately obvious whether the 
 
 Cytoscape was used to replicate the histograms for degree centrality and betweenness centrality. This time, paired barplots are used for easy comparison. 
 
-**Figure 4**: Replicated network properties of genes with and without Carl's SNPs
-![network_properties](Pipeline/network_properties.png)  
+**Figure 6**: Replicated network properties of genes with and without Carl's SNPs
+![](Pipeline/network_properties.png)  
 
 ##### 4.3.3 Hierarchical Network Analysis
 
 The DIP and MINT network are cut into 6 layers. Fisher’s exact is used to test the enrichment of genes with SNP in Carl’s genome for different layers. The distribution of genes in the 6 layers is shown as below.
 
-**Figure 5**: Distribution of genes across layers in DIP
-![DIP_layers](Pipeline/DIP_Layers.png)  
+**Figure 7**: Distribution of genes across layers in DIP
 
-**Figure 6**: Distribution of genes across layers in MINT
-![MINT_layers](Pipeline/MINT_Layers.png)  
+![](Pipeline/DIP_Layers.png)  
 
-##### 4.3.4 Detection of Mutation Enrichment or Depletion in Each Hierarchy
+**Figure 8**: Distribution of genes across layers in MINT
 
-Based on the result of fisher’s exact test ($\alpha$ = 0.05), there is no significant enrichment in any layers for these network, which may indicate genes with SNP are not clustered or scattered in specific patterns compared to those without SNPs.
+![](Pipeline/MINT_Layers.png)  
+
+##### 4.3.4 Detection of Mutation Enrichment or Depletion in Each Hierarchical Layer
+
+Based on the result of Fisher’s exact test ($\alpha$ = 0.05), there is no significant enrichment in any layers for these network, which may indicate genes with SNP are not clustered or scattered in specific patterns compared to those without SNPs.
+
+**Table 1**: P-values for Mutation Enrichment in 6 Hierarchical Layers
 
 | Hierarchy | DIP p-value | MINT p-value |
 |-----------|-------------|--------------|
@@ -183,15 +193,6 @@ Based on the result of fisher’s exact test ($\alpha$ = 0.05), there is no sign
 | 5         | 0.52        | 0.05         |
 | 6         | 0.74        | 0.98         |
 
-##### 4.3.5 Visualization of Hierarchical Layers
-
-The same Cytoscape visualizations are shown below, colored by the six separate hierarchical layers.  
-
-**Figure 7**: Visualized Hierarchy Layers from DIP
-![DIP_hierarchy_1](Pipeline/DIP_hierarchy_1.png) 
-![DIP_hierarchy_2](Pipeline/DIP_hierarchy_2.png) 
-**Figure 8**: Visualized Hierarchy Layers from MINT
-![MINT_hierarchy](Pipeline/MINT_hierarchy.png) 
 
 ____________
 
