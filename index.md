@@ -80,9 +80,9 @@ The coding and pipeline portions of this project use the DIP and MINT databases.
 
 #### 2.4 Observed Centrality Measures
 
-We observed that proteins with SNPs are have smaller values for both measures of centrality, meaning that they are less likely to be connected to many other nodes (degree) and less likely to help connect other nodes (betweenness. SNPs that interrupt network interactions are more likely to be deleterious and therefore less common in a healthy individual like Carl.
+We observed that proteins with SNPs are have smaller values for both measures of centrality, meaning that they are less likely to be connected to many other nodes (degree) and less likely to help connect other nodes (betweenness. SNPs that interrupt network interactions are more likely to be deleterious and therefore less common in a healthy individual like Carl. 
 
-These centralities measurement allow us to quantitatively show the influence of an individual gene on the overall network. Genes that are connected to many nodes, or help to connect other nodes are of special interest. Thus, these measures are useful for understanding, identifying, and validating candidate mutations in the context of the whole the protein-protein network.
+These centralities measurement allow us to quantitatively show the influence of an individual gene on the overall network. Genes that are connected to many nodes, or help to connect other nodes are of special interest. This is because their removal may affect a large number of other proteins and result in a more harmful mutation phenotype. Thus, these measures are useful for understanding, identifying, and validating candidate mutations in the context of the whole the protein-protein network.
 
 ____________
 
@@ -197,7 +197,7 @@ Based on the result of Fisher’s exact test ($\alpha$ = 0.05), there is no sign
 ____________
 
 ### 5. Conclusions <a name = "conclusions"></a>
-A network analysis of Carl's personal genome reveals some properties of his genes with SNPs. By two separate metrics, these genes are quantitatively demonstrated to have lower influence on the overall protein network. The Cytoscape visualization further helps demonstrate this pattern. These network plots also reveal a few genes (the large, red nodes) that are more likely to be problematic based on their positioning (between other nodes) and degree (high). None of these findings can definitely demonstrate pathogenicity, but are valuable for identifying and validating candidate mutations to report. 
+A network analysis of Carl's personal genome reveals some properties of his genes with SNPs. By two separate metrics, these genes have been quantitatively shown to have lower influence on the overall protein network. The Cytoscape visualization further helps demonstrate this pattern. These network plots also reveal a few genes (the large, red nodes) that are more likely to be problematic based on their positioning (between other nodes) and degree (large number of direct connections). None of these findings can definitely demonstrate pathogenicity. Still, these metrics are valuable for identifying and validating candidate mutations to report. Hierarchical analysis was employed to model the protein network, but there did not appear to be significant SNP enrichment in any of the 6 resultant layers. 
 
 ____________
 
