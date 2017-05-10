@@ -36,7 +36,7 @@ For the past decade, protein networks have provided valuable insights into molec
 ------------
 
 #### 2.1 Instructions
-*Discuss the difference of degree centrality and betweenness centrality you observed. How are these centralities measurement helpful for us to understand different mutations and the protein-protein network.*
+*Discuss the difference of degree centrality and betweenness centrality you observed. How are these centrality measurements helpful for us to understand different mutations and the protein-protein network?*
 
 ------------
 
@@ -80,9 +80,9 @@ The coding and pipeline portions of this project use the DIP and MINT databases.
 
 #### 2.4 Observed Centrality Measures
 
-We observed that proteins with SNPs are have smaller values for both measures of centrality, meaning that they are less likely to be connected to many other nodes (degree) and less likely to help connect other nodes (betweenness. SNPs that interrupt network interactions are more likely to be deleterious and therefore less common in a healthy individual like Carl. 
+We observed that proteins with SNPs have smaller values for both measures of centrality, meaning that they are less likely to be connected to many other nodes (degree) and less likely to help connect other nodes (betweenness. SNPs that interrupt network interactions are more likely to be deleterious and therefore less common in a healthy individual like Carl. 
 
-These centralities measurement allow us to quantitatively show the influence of an individual gene on the overall network. Genes that are connected to many nodes, or help to connect other nodes are of special interest. This is because their removal may affect a large number of other proteins and result in a more harmful mutation phenotype. Thus, these measures are useful for understanding, identifying, and validating candidate mutations in the context of the whole the protein-protein network.
+These centralities measurement allow us to quantitatively show the influence of an individual gene on the overall network. Genes that are connected to many nodes, or help to connect other nodes are of special interest. This is because their removal may affect a large number of other proteins and result in a more harmful mutation phenotype. We can look at which genes are affected by mutations of interest, and therefore extrapolate effects on the network at large. Thus, these measures are useful for understanding, identifying, and validating candidate mutations in the context of the whole the protein-protein network.
 
 ____________
 
