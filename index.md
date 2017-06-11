@@ -18,12 +18,6 @@ Table of Contents
 6. [References](#references)
 
 
-
-**Contributors**  
--   Writing: James Diao  
--   Coding: Zhaolong Yu  
--   Pipeline: Dingjue Ji  
-
 -----------------------
 
 ### 1. Introduction <a name = "introduction"></a>
